@@ -1,0 +1,16 @@
+{
+  "name": "dada",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "dependencies": {
+    "ai-sdk-deep-agent": "^0.1.11",
+    "ink": "^6.5.1"
+  }
+}
