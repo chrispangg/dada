@@ -1,16 +1,21 @@
 {
-  "name": "dada",
+  "name": "dada - dialectical adversarial development architecture",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "start": "bun run index.ts",
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/react": "^19.2.7"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
   "private": true,
   "dependencies": {
-    "ai-sdk-deep-agent": "^0.1.11",
-    "ink": "^6.5.1"
+    "ai-sdk-deep-agent": "^0.1.14"
   }
 }
