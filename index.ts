@@ -1,5 +1,5 @@
 /**
- * index.ts - Dialectical Autocoding with DeepAgent AI-SDK
+ * Dialectical Autocoding with DeepAgent AI-SDK
  * 
  * Minimal single-file demonstration of dialectical autocoding:
  * - Player agent implements solutions
@@ -255,11 +255,7 @@ const requirements = `
 1. Build a single-page React frontend that implements a basic calculator UI (add, subtract, multiply, divide)
 2. Show inputs and result in the browser with basic styling
 3. Calculator operations must be performed in React state (no backend or API)
-4. Handle division by zero (display a user-friendly error)
-5. Write comprehensive React unit tests
-6. All tests must pass
-7. Use Bun, TypeScript, and React
-8. Run and serve the app using Bun.serve()
+4. Use Bun, TypeScript, and React
 `
 
 runDADA(requirements)
