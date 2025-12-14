@@ -1,10 +1,10 @@
 /**
- * index.ts - Dialectical Adversarial Development Architecture
+ * index.ts - Dialectical Autocoding with DeepAgent AI-SDK
  * 
- * Minimal single-file demonstration of adversarial cooperation:
+ * Minimal single-file demonstration of dialectical autocoding:
  * - Player agent implements solutions
  * - Coach agent reviews and critiques
- * - Loop continues until coach approves or max turns reached
+ * - Loop continues until coach approves or max turns are reached
  */
 
 import { createDeepAgent, LocalSandbox, type DeepAgentEvent } from 'ai-sdk-deep-agent';
