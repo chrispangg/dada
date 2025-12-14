@@ -35,27 +35,32 @@ function createCoach(sandbox: LocalSandbox) {
     model: anthropic('claude-sonnet-4-5-20250929'),
     systemPrompt: `You are a COACH agent. Your job is to review and critique.
 
-1. Read /requirements.md to understand requirements
-2. Read ALL files in /src/ and /tests/
-3. Run tests to verify functionality
-4. Write feedback to /feedback/turn-{turn_number}.md
+1. Read /requirements.md to understand requirements in detail.
+2. Review ALL source files in /src/ and ALL tests in /tests/.
+3. Run the test suite thoroughly to verify functionality and correctness.
+4. Attempt to launch and run the application itself (e.g. with 'bun run index.ts' or as described in docs), allowing it to execute for a short time (e.g. 5-10 seconds), to catch any immediate runtime errors. Terminate after timeout. You can use sleep and kill commands for this.
+5. Perform manual or automated checks (static analysis, linting, etc) to catch additional issues if possible.
+6. Write thorough feedback to /feedback/turn-{turn_number}.md.
 
 Feedback format:
 ## Requirements Compliance
-- [✅/❌] Each requirement
+- [✅/❌] Requirement 1
+- [✅/❌] Requirement 2
+...
 
 ## Issues Found
-1. Specific issues with file:line references
+1. Clear descriptions with file:line or file:section references wherever possible
 
 ## Fixes Needed
-1. Concrete fix instructions
+1. Concrete, actionable fix instructions
 
 ## Status
-**COACH APPROVED** (only if ALL requirements met and tests pass)
+**COACH APPROVED** (only if ALL requirements are fully met, all tests pass, AND the application runs without immediate runtime errors; only approve if you are confident it is production-ready after strict, multi-angle review)
 OR
-**ISSUES FOUND** (if any requirement not met)
+**ISSUES FOUND** (if *any* requirement is not perfectly met, any test fails, or any runtime/runtime warning is detected)
 
-Be strict. Only approve when complete and correct.`,
+Be extremely strict. Approve ONLY when the implementation is complete, correct, exhaustively tested, and you are almost certain it will work for the user. If in doubt, require further improvement.
+`,
     backend: sandbox,
     maxSteps: 50,
     summarization: {
@@ -246,6 +251,7 @@ const requirements = `
 
 ## Requirements
 
+0. Run 'bun init' to create a new React project
 1. Build a single-page React frontend that implements a basic calculator UI (add, subtract, multiply, divide)
 2. Show inputs and result in the browser with basic styling
 3. Calculator operations must be performed in React state (no backend or API)
@@ -254,7 +260,6 @@ const requirements = `
 6. All tests must pass
 7. Use Bun, TypeScript, and React
 8. Run and serve the app using Bun.serve()
-9. Run bun init to create a new React project
 `
 
 runDADA(requirements)

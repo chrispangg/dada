@@ -1,8 +1,10 @@
 # Dialectical Autocoding with DeepAgent AI SDK
 
-A demonstration of **adversarial cooperation** in code synthesis—a novel approach to AI-assisted software development that transcends the limitations of traditional "vibe coding" tools through a structured coach-player feedback loop.
+A demonstration of **adversarial cooperation** in code synthesis - a novel approach to AI-assisted software development that transcends the limitations of traditional "vibe coding" tools through a structured coach-player feedback loop.
 
 ## What is Dialectical Autocoding?
+
+![Dialectical Autocoding Architecture](./assets/dada-architecture.png)
 
 Dialectical autocoding implements a **bounded, adversarial process** between two cooperating AI agents:
 
@@ -82,7 +84,7 @@ This project implements dialectical autocoding using the [deepagent-ai-sdk](http
 
 ### Architecture
 
-The implementation (`dada.ts`) orchestrates the coach-player dyad:
+The implementation (`index.ts`) orchestrates the coach-player dyad:
 
 - **Player Agent**: Uses `claude-haiku-4-5` for fast iteration
 - **Coach Agent**: Uses `claude-sonnet-4-5` for thorough review
@@ -114,7 +116,7 @@ export ANTHROPIC_API_KEY=your_api_key_here
 Run the dialectical autocoding process:
 
 ```bash
-bun run dada.ts
+bun run index.ts
 ```
 
 Or use the npm script:
@@ -125,7 +127,7 @@ bun start
 
 ### Customizing Requirements
 
-Edit the `requirements` constant in `dada.ts` to specify what you want to build:
+Edit the `requirements` constant in `index.ts` to specify what you want to build:
 
 ```typescript
 const requirements = `
